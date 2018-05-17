@@ -1,0 +1,124 @@
+<ion-header>
+        
+    <ion-navbar class="bar-positive">
+        <ion-title>
+            <img src="assets/logo.png" alt="Company Logo" style="height:30px; filter: brightness(0) invert(1);">
+            <font color="white"> ScaleIT Ionic Node.js Sample Application </font>
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only>
+                <ion-icon name="person"></ion-icon>
+            </button>
+            <button ion-button icon-only>
+                <ion-icon name="information-circle"></ion-icon>
+            </button>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+        <ion-menu menu-wd-background = "danger" side="right" [content]="mycontent" class="my-side-menu">
+                        <ion-card >
+
+                  <ion-list >
+                    <p>
+                    <button [navPush]="user" ion-button color="secondary" full id="user">User</button>
+                    <br>
+                    <button [navPush]="dev" ion-button color="energized" full id="dev">Developer</button>
+                    <br>
+                    <button [navPush]="admin" ion-button color="danger" full id="admin">Admin</button>
+                    <br>
+                    <button ion-button full id="rest">Rest-API</button>
+                    </p>
+                  </ion-list>
+                </ion-card>
+
+              </ion-menu>
+              
+              <ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+    <ion-card>
+        <ion-card-content text-right>
+            <button ion-button class="active" round margin-left id="refresh">
+                <ion-icon name="refresh"></ion-icon>
+            </button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            ScaleIT App User Page
+        </ion-card-header>
+        <ion-card-content>
+<!-- How to do Tabs in Ionic: https://www.youtube.com/watch?v=PDTV2YKJ0r0
+    https://devdactic.com/ionic-side-menu-tabs/
+                      <ion-tabs>
+
+                            <ion-tab title="Home">
+                            <ion-nav-view name="tab-dash"></ion-nav-view>
+                            </ion-tab>
+                           
+                            <ion-tab title="About">
+                            </ion-tab>
+                           
+                            <ion-tab title="Settings">
+                            </ion-tab>
+                           
+                           </ion-tabs> -->
+
+                <div class="row">
+                        <div class="col">
+                            <h2>Nutzerhandbuch für die App</h2>
+                        </div>
+                        <div class="col">
+                            <h2>:/user/doc</h2>
+                        </div>
+                        <div class="col">
+                            <h2>
+                                <button ion-button color="secondary" small id="docusr">Handbuch</button>
+                            </h2>
+                        </div>
+                    </div>
+                <div class="row">
+                        <div class="col">
+                            <h2>Relevante Statusinformationen über die App für den Nutzer</h2>
+                        </div>
+                        <div class="col">
+                            <h2>:/user/status</h2>
+                        </div>
+                        <div class="col">
+                            <h2>
+                                <button ion-button color="secondary" small id="statususr">Status</button>
+                            </h2>
+                        </div>
+                    </div>
+        </ion-card-content>
+        <ion-card-content style="height:50vh;">
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            Navigation
+        </ion-card-header>
+        <ion-card-content>
+            <!-- Uses classical html navigation -->
+            <a href="/#/admin">Jump to Administration</a>
+
+
+            <!-- Use the ionic stack for navigation (automatic back button) -->
+            <!-- Text Button -->
+            <button [navPush]="admin">Push Page2 onto the stack and navigate to it</button>
+
+            <!-- Style Icon Button -->
+            <button [navPush]="admin" ion-button icon-only>
+              <ion-icon name="information-circle"></ion-icon>
+            </button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer style=" background-color: lightgray; text-align: center; justify-content: center; align-items: center;">
+    <ion-toolbar id="footer" transparent>
+        Footer: (C) MIT License, ScaleIT, KIT
+    </ion-toolbar>
+</ion-footer>
